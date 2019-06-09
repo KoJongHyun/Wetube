@@ -9,7 +9,7 @@ const JOIN = '/join';
 const USER = '/user';
 const USER_DETAIL = '/:id';
 const EDIT_PROFILE = '/edit-profile';
-const CHANGE_PASSWORD = '/change-password';
+const CHANGE_PASSWORD = '/:id/change-password';
 
 // Video
 const VIDEO = '/video';
