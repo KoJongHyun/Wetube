@@ -8,7 +8,6 @@ import globalRouter from './routers/globalRouter';
 import userRouter from './routers/userRouter';
 import videoRouter from './routers/videoRouter';
 import routes from './routes';
-
 const app = express();
 
 app.use(helmet());

@@ -3,7 +3,7 @@ export const videos = [{
     title: 'Video Awesome',
     description: 'This is something I love',
     views: 24,
-    videoFile: 'http://archive.org/details/BigBuckBunny_124',
+    videoFile: 'https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4',
     creator: {
       id: 93939,
       name: 'Ko Jonghyun',
@@ -15,7 +15,7 @@ export const videos = [{
     title: 'Video Good',
     description: 'This is something I love',
     views: 24,
-    videoFile: 'http://archive.org/details/BigBuckBunny_124',
+    videoFile: 'https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4',
     creator: {
       id: 93939,
       name: 'Ko Jonghyun',
@@ -27,7 +27,7 @@ export const videos = [{
     title: 'Video Perfect',
     description: 'This is something I love',
     views: 24,
-    videoFile: 'http://archive.org/details/BigBuckBunny_124',
+    videoFile: 'https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4',
     creator: {
       id: 93939,
       name: 'Ko Jonghyun',
