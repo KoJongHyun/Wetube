@@ -1,9 +1,7 @@
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-dotenv.config();
 
 const VideoSchema = new mongoose.Schema({
-  fileUrl: {
+  fileURL: {
     type: String,
     required: 'File URL is required'
   },
@@ -20,12 +18,11 @@ const VideoSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  Comments: [{
+  comments: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Comment'
   }]
 });
 
 const model = mongoose.model('Video', VideoSchema);
-
 export default model;
