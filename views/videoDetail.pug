@@ -1,4 +1,10 @@
 extends layouts/main
 
 block content
-  p Video Detail
+  .video-player
+    video(src=`/${video.fileURL}`)
+  .video-info
+    a(href=routes.editVideo(`${video.id}`)) Edit video
+    h5.video-title=video.title
+    span.video-views=video.views
+    p.video-description=video.description
