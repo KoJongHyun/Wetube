@@ -2,9 +2,9 @@ extends layouts/main
 include mixins/videoBlock
 
 block content
-  .search-header
+  .search__header
     h1 Searching for: #{searchingBy}
-  .search-videos
+  .search__videos
     if videos.length === 0
       h5 Not Search Found
     each item in videos
