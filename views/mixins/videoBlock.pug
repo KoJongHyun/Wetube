@@ -1,5 +1,5 @@
 mixin videoBlock(video = {})
-  .video__block
+  .video-block
     video(src=video.videoFile, controls)
     a(href=routes.videoDetail(video.id))
       h2.title= video.title
