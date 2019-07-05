@@ -12,7 +12,57 @@ body {
 
 main {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   min-height: 70vh;
+}
+
+input:not([type="file"]),
+button,
+textarea,
+.file-upload {
+  padding: 7px 10px;
+  width: 100%;
+  max-width: 320px;
+  color: $black;
+  background-color: $white;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  resize: none;
+  cursor: pointer;
+  &::-webkit-input-placeholder {
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  &:-ms-input-placeholder {
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  &::-ms-input-placeholder {
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  &::placeholder {
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+button {
+  height: 40px;
+  border: none;
+  background-color: $sky;
+  color: $white;
+  -webkit-box-shadow: 1px 1px 5px #d9d9d9, 1px 4px 11px #d9d9d9;
+  box-shadow: 1px 1px 5px #d9d9d9, 1px 4px 11px #d9d9d9;
+}
+
+button.delete {
+  background-color: $dark-red;
+  color: $white;
+}
+
+a {
+  display: block;
 }
