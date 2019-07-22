@@ -18,7 +18,7 @@ passport.use(new GithubStrategy({
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_ID,
     clientSecret: process.env.FACEBOOK_SECRET,
-    callbackURL: `https://9b486051.ngrok.io${routes.facebookCallback}`,
+    callbackURL: `https://localhost:4000${routes.facebookCallback}`,
     profileFields: ['id', 'displayName', 'photos', 'email'],
     scope: ['public_profile', 'email']
   },
