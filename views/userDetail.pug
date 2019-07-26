@@ -6,8 +6,8 @@ block content
       img.u-avatar(src=user.avatarUrl)
       h4.user-profile__user-name=user.name
     if user.id === loggedUser.id
-    .user-profile__bts
-      a(href=`users${routes.editProfile}`)
-        button ✏️ Edit Profile  
-      a(href=`users${routes.changePassword}`)
-        button 🔒 Change Password
+      .user-profile__bts
+        a(href=`users${routes.editProfile}`)
+          button ✏️ Edit Profile  
+        a(href=`users${routes.changePassword}`)
+          button 🔒 Change Password

@@ -55,7 +55,7 @@ export const getJoin = (req, res) => {
   res.render('join', { pageTitle: 'Join' })
 }
 
-export const postJoin = async(req, res) => {
+export const postJoin = async(req, res, next) => {
   const {
     body: { name, email, password, password2 }
   } = req;
@@ -72,7 +72,7 @@ export const postJoin = async(req, res) => {
         user,
         password
       );
-      next();
+      return next();
     } catch (error) {
       console.log(error);
       res.redirect(routes.home);
