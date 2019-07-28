@@ -14,7 +14,7 @@ block content
         span.video-info__views 1view
       else
         span.video-info__views #{video.views} views
-      .video-auth
+      .video-info__auth
         |Uploaded by 
         a(href=routes.userDetail(video.creator.id))=video.creator.name
     .video-comments
