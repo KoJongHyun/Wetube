@@ -9,7 +9,7 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  .video-player {
+  .videoPlayer {
     width: 100%;
     max-width: 850px;
     video {
@@ -51,7 +51,7 @@
     .video-info__auth {
       a {
         display: inline-block;
-        color: #3498db;
+        color: $sky;
       }
     }
   }
