@@ -10,6 +10,8 @@ export const home = async(req, res) => {
   }
 }
 
+// Search Video
+
 export const search = async(req, res) => {
   const {
     query: { term: searchingBy }
@@ -25,6 +27,8 @@ export const search = async(req, res) => {
 
 export const video = (req, res) => res.render('video', { pageTitle: 'Video' });
 
+// Video Detail
+
 export const videoDetail = async(req, res) => {
   const {
     params: { id }
@@ -36,6 +40,8 @@ export const videoDetail = async(req, res) => {
     res.redirect(routes.home);
   }
 }
+
+// Upload Video
 
 export const getUpload = (req, res) => {
   res.render('upload', { pageTitle: 'Upload' });
@@ -56,6 +62,8 @@ export const postUpload = async(req, res) => {
   req.user.save();
   res.redirect(routes.videoDetail(newVideo.id));
 }
+
+// Edit Video
 
 export const getEditVideo = async(req, res) => {
   const {
@@ -86,6 +94,8 @@ export const postEditVideo = async(req, res) => {
   }
 }
 
+// Delete Video
+
 export const deleteVideo = async(req, res) => {
   const {
     params: { id }
@@ -99,4 +109,22 @@ export const deleteVideo = async(req, res) => {
     }
   } catch (error) {}
   res.redirect(routes.home);
+}
+
+// Register Video View
+
+export const postRegisterView = async(req, res) => {
+  const {
+    params: { id }
+  } = req;
+  try {
+    const video = await Video.findById(id);
+    video.views += 1;
+    video.save();
+    res.status(200);
+  } catch (error) {
+    res.status(400);
+  } finally {
+    res.end();
+  }
 }
