@@ -23,3 +23,8 @@ block content
         span.video-commtents__number 1 comment
       else
         span.video-commtents__number #{video.comments.length} comments
+      form.add__comment#jsAddComment
+        input(type="text", placeholder="Add a comment")
+      ul.video__comments-list
+        each comment in video.comments
+          span=comment.text
