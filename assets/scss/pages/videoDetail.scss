@@ -57,8 +57,26 @@
   }
   .video-comments {
     margin-top: 25px;
-    .video-comments-number {
-      font-size: 18px;
+    .add__comment {
+      margin-top: 20px;
+    }
+    .video__comments-list {
+      margin-top: 20px;
+      li {
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+        span {
+          display: block;
+          background: $sky;
+          color: $white;
+          border-radius: 20px;
+          line-height: 40px;
+          border-top-left-radius: 0px;
+          border-bottom-right-radius: 0px;
+          text-align: center;
+        }
+      }
     }
   }
 }
