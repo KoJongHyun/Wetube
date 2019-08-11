@@ -35,7 +35,11 @@ const handleSubmit = event => {
   event.preventDefault();
   const commentInput = addCommentForm.querySelector('input');
   const comment = commentInput.value;
-  sendComment(comment);
+  if (commentInput.classList.contains('login')) {
+    sendComment(comment);
+  } else {
+    alert('Please Login!');
+  }
   commentInput.value = '';
 }
 

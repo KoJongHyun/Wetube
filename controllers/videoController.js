@@ -12,7 +12,6 @@ export const home = async(req, res) => {
 }
 
 // Search Video
-
 export const search = async(req, res) => {
   const {
     query: { term: searchingBy }
@@ -29,7 +28,6 @@ export const search = async(req, res) => {
 export const video = (req, res) => res.render('video', { pageTitle: 'Video' });
 
 // Video Detail
-
 export const videoDetail = async(req, res) => {
   const {
     params: { id }
@@ -43,7 +41,6 @@ export const videoDetail = async(req, res) => {
 }
 
 // Upload Video
-
 export const getUpload = (req, res) => {
   res.render('upload', { pageTitle: 'Upload' });
 }
@@ -65,7 +62,6 @@ export const postUpload = async(req, res) => {
 }
 
 // Edit Video
-
 export const getEditVideo = async(req, res) => {
   const {
     params: { id }
@@ -96,7 +92,6 @@ export const postEditVideo = async(req, res) => {
 }
 
 // Delete Video
-
 export const deleteVideo = async(req, res) => {
   const {
     params: { id }
@@ -113,7 +108,6 @@ export const deleteVideo = async(req, res) => {
 }
 
 // Register Video View
-
 export const postRegisterView = async(req, res) => {
   const {
     params: { id }
@@ -131,7 +125,6 @@ export const postRegisterView = async(req, res) => {
 }
 
 // Add Comment
-
 export const postAddComment = async(req, res) => {
   const {
     params: { id },
@@ -146,6 +139,21 @@ export const postAddComment = async(req, res) => {
     });
     video.comments.push(newComment.id);
     video.save();
+  } catch (error) {
+    res.status(400);
+  } finally {
+    res.end();
+  }
+}
+
+// Delete Comment
+export const postDeleteComment = async(req, res) => {
+  const {
+    params: { id },
+    user
+  } = req;
+  try {
+    const video = await Comment.findByIdAndDelete(id);
   } catch (error) {
     res.status(400);
   } finally {
