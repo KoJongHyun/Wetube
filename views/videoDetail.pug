@@ -32,9 +32,18 @@ block content
           input(type="text", placeholder="Add a comment" class="login")
         else
           input(type="text", placeholder="Add a comment")
-      ul.video__comments-list#jsCommentList
-        each comment in video.comments.reverse()
-          li
-            span=comment.text
-            if loggedUser && comment.creator == loggedUser.id
+      ul.video-comments__list#jsCommentList
+        //- each comment in video.comments.reverse()
+        each comment in commentList.reverse()
+          li.video-comments__item
+            .video-comments__creator-thumb
+              if comment.creator.avatarUrl
+                img(src=`../${comment.creator.avatarUrl}`, alt=`${comment.creator.name}`)
+              else
+                span
+            .video-comments__info
+              span.video-comments__creator=comment.creator.name
+              span.video-comments__date=comment.createdAt
+              span.video-comments__content=comment.text
+            if loggedUser && comment.creator.id == loggedUser.id
               button.jsDelCommentBtn(data-id=`${comment.id}`) Delete
