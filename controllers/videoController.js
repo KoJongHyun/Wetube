@@ -1,6 +1,7 @@
 import routes from '../routes';
 import Video from '../models/Video';
 import Comment from '../models/Comment';
+import moment from 'moment';
 
 export const home = async(req, res) => {
   try {
@@ -38,8 +39,7 @@ export const videoDetail = async(req, res) => {
     for (let i = 0; i < video.comments.length; i++) {
       commentList.push(await Comment.findById(video.comments[i].id).populate('creator'));
     }
-    console.log(commentList);
-    res.render('videoDetail', { pageTitle: video.title, video, commentList });
+    res.render('videoDetail', { pageTitle: video.title, video, commentList, moment });
   } catch (error) {
     res.redirect(routes.home);
   }
@@ -154,11 +154,10 @@ export const postAddComment = async(req, res) => {
 // Delete Comment
 export const postDeleteComment = async(req, res) => {
   const {
-    params: { id },
-    user
+    params: { id }
   } = req;
   try {
-    const video = await Comment.findByIdAndDelete(id);
+    const comment = await Comment.findByIdAndDelete(id);
   } catch (error) {
     res.status(400);
   } finally {
