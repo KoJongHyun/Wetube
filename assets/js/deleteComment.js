@@ -1,7 +1,6 @@
 import Axios from "axios";
 
 const commentList = document.getElementById('jsCommentList');
-const listItems = Array.from(commentList.querySelectorAll('li'));
 
 const sendComment = async(el) => {
   const commentId = el.target.dataset.id;
@@ -19,9 +18,12 @@ const init = btn => {
   btn.addEventListener('click', sendComment);
 }
 
-listItems.forEach(item => {
-  const delBtn = item.querySelector('.jsDelCommentBtn');
-  if (delBtn) {
-    init(delBtn);
-  }
-});
+if (commentList) {
+  const listItems = Array.from(commentList.querySelectorAll('li'));
+  listItems.forEach(item => {
+    const delBtn = item.querySelector('.jsDelCommentBtn');
+    if (delBtn) {
+      init(delBtn);
+    }
+  });
+}
