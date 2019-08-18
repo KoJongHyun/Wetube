@@ -38,7 +38,7 @@ block content
             li.video-comments__item
               .video-comments__creator-thumb
                 if comment.creator.avatarUrl
-                  img(src=`../${comment.creator.avatarUrl}`, alt=`${comment.creator.name}`)
+                  img(src=comment.creator.avatarUrl, alt=`${comment.creator.name}`)
                 else
                   span
               .video-comments__info
